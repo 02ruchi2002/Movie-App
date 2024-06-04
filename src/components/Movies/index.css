@@ -1,0 +1,20 @@
+.tab-title{
+    padding: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.movie-container{
+    
+}
+
+.tab-container{
+    display: flex;
+    column-gap: 10px;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+}

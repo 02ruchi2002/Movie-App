@@ -1,0 +1,32 @@
+#input-wrapper{
+    display: flex;
+    align-items: center;
+    background-color: rgb(52, 45, 45) ;
+    border-radius: 10px;
+    height: 40px;
+    width: 250px;
+    padding: 5px 10px;
+    
+  
+}
+
+input{
+    background-color: rgb(52, 45, 45);
+    color: white;
+    outline: none;
+    border: none;
+   
+}
+
+input::placeholder{
+    color: white;
+    opacity: 0.5;
+    /* font-size:medium; */
+    
+}
+
+.search-icon{
+    background-color:rgb(52, 45, 45) ;
+    height: 20px;
+    width: 20px;
+}

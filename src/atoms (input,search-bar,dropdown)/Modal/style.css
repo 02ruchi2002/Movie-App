@@ -1,0 +1,39 @@
+.modal-container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    
+    display: flex;
+    justify-content: center;
+    align-items:end;
+}
+
+.parent-box{
+    width: 70%;
+    height: 90%;
+    background-color: rgb(23, 23, 23);
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+    position: relative;
+}
+
+.cancel {
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.cancel > svg{
+    width: 50%;
+    height: 50%;
+}

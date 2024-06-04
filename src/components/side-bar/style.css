@@ -1,0 +1,39 @@
+#side-bar{
+    padding: 35px 25px 25px 25px;
+    background-color: #000;
+    color: #fff;
+    height: calc(100vh - 80px);
+    width: 80px;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+    gap: 30px;
+    transition: width 0.7s;
+    border-right: 0.1px solid #FFF;
+}
+
+#side-bar:hover{
+    width: 200px;
+}
+
+.side-list svg{
+    height: 30px;
+    width: 30px;
+}
+
+.side-list{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.lable{
+    display: none; 
+}
+
+
