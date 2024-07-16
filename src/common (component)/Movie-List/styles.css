@@ -1,0 +1,23 @@
+.pagination{
+    width: 100%;
+     display: flex;
+     justify-content: space-between;
+     font-weight: 800;
+     font-size: large;
+    
+
+}
+
+.body{
+    display: flex;
+}
+
+
+.btn{
+    color: black;
+}
+
+.body > input {
+    color: black;
+}
+

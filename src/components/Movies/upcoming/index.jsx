@@ -2,7 +2,7 @@ import React from "react";
 import { useState,useEffect } from "react";
 import { getAPI } from "../../../API/services";
 import { API_ENDPOINTS } from "../../../API/integration";
-import MovieCard from "../../../common (component)/movie-card";
+import MovieList from "../../../common (component)/Movie-List";
 import { useSearchParams } from "react-router-dom";
 import Modal from "../../../atoms (input,search-bar,dropdown)/Modal";
 import OverView from "../../overview";
@@ -13,16 +13,21 @@ const Upcoming = () =>{
     const [searchParam,setSearchParam] = useSearchParams()
     const [movieOverview,setMovieOverview] = useState(false)
     const [movieId,setMovieId] = useState(null)
+    const [page,setPage] = useState(1)
+    const [totalPage,setTotalPage] = useState(0)
+    const [totalMovieResult,setTotalMovieResult] = useState(0)
 
     const getUpcoming = async()=>{
         const response = await getAPI(API_ENDPOINTS.upcoming)
         // console.log(data)
         setMovies(response?.data?.results)
+        setTotalPage(response?.data?.total_pages)
+        setTotalMovieResult(response?.data?.total_results)
     }
 
     useEffect(() => {
         getUpcoming()
-    }, [])
+    }, [page])
 
     useEffect(()=>{
        if(!searchParam.has('movieId')) return;
@@ -34,7 +39,7 @@ const Upcoming = () =>{
 
 
 
-    const handleMovieOverview = (movieId) =>{
+    const handleMoviesOverview = (movieId) =>{
       const param = searchParam
       param.set("movieId",movieId)
       setSearchParam(param)
@@ -48,12 +53,15 @@ const Upcoming = () =>{
     
     return(
         <>
-        {
-            movies.map((movie,index)=>(
-                  <MovieCard handleOverview={()=>handleMovieOverview(movie?.id)} key={index} movie={movie}/> 
-            ))
-
-        }
+        <MovieList handleOverview={handleMoviesOverview}
+         movies={movies}
+         page={page}
+         totalPage={totalPage}
+         gotoPrevBtn={()=>setPage(page - 1)}
+         gotoNextBtn={()=>setPage(page + 1)}
+         inputHandler={(e)=>setPage(e.target.value)}
+         totalMovieResult={totalMovieResult} />
+        
         {
             movieOverview ?
             <Modal handleCancel={handleClose}>

@@ -10,7 +10,7 @@
   
 }
 
-input{
+#input-wrapper > input{
     background-color: rgb(52, 45, 45);
     color: white;
     outline: none;
@@ -18,7 +18,7 @@ input{
    
 }
 
-input::placeholder{
+#input-wrapper > input::placeholder{
     color: white;
     opacity: 0.5;
     /* font-size:medium; */
