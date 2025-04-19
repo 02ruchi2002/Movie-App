@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://movies-backend-a6m5.onrender.com/api'
+const BASE_URL = 'https://api.themoviedb.org/3'
+// const BASE_URL = 'https://movies-backend-a6m5.onrender.com/api'
+
 
 export const getAPI = async (url , queryParams) => {
    try {
